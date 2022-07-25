@@ -13,7 +13,7 @@ import time
 def readStockList():
     # DB에서 주식코드 받아오기
     # DB연결
-    connect = pymysql.connect(host='localhost', user='root', password='122333',
+    connect = pymysql.connect(host='localhost', user='root', password='ssafy',
                               db='stocksafe_db', charset='utf8')  # 한글처리 (charset = 'utf8')
     cur = connect.cursor()
     sql = "select id from stock"
@@ -73,7 +73,8 @@ def predict(list1):
 
 # 이미지 저장 -> GCP storage에 업로드
 def gcpUpload(file_name1):
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "src/main/resources/keystore/exalted-arcanum-356907-6273c406bf43.json"
+    #    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "src/main/resources/keystore/exalted-arcanum-356907-6273c406bf43.json"
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/home/tweetpantry/stocksafe_test/key/exalted-arcanum-356907-6273c406bf43.json"
 
     storage_client = storage.Client()
     buckets = list(storage_client.list_buckets())
@@ -106,16 +107,16 @@ def noThread():
 
     stock_list = readStockList()
 
-    print('----read stock list success.----')
+    #print('----read stock list success.----')
     print(stock_list)
 
     img_file = predict(stock_list)
 
-    print('----predict success. image saved.----')
+    #print('----predict success. image saved.----')
 
     # gcpUpload(img_file[0])
 
-    print('----gcp storage upload success.----')
+   # print('----gcp storage upload success.----')
 
     print('----end. -->' + str(time.time() - startTime) + "----")
 
@@ -129,17 +130,26 @@ def multiThread():
     print('----start.----')
 
     list1 = readStockList()
+    print(list1)
 
-    for i in range(0, 5):  # 1 ~ 7 실행
-        start = i*4
-        list1_slice = list1[start:start+4]
+    thread_cnt = 2
+    part_size = int( len(list1) / thread_cnt )
+    for i in range(0, thread_cnt):  # 
+        start = i*part_size
+        print(start, thread_cnt, part_size)
+        list1_slice=[]
+        if i != thread_cnt-1:
+            list1_slice = list1[start:start+part_size]
+        else:
+            list1_slice = list1[start:]
         print(list1_slice)
         my_thread = threading.Thread(target=predict, args=(list1_slice,))
         my_thread.start()
+    
 
     # print('----end. -->' + str(time.time() - startTime) + "----")
 
 
 if __name__ == '__main__':
-    # noThread()
-    multiThread()
+    noThread()
+    #multiThread()
