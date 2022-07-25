@@ -104,10 +104,10 @@ insert into stock
 values("NFLX", "넷플릭스", "NASDAQ", "Communication Services", "Entertainment");
 
 insert into stock
-values("BRK-A", "버크셔 해서웨이 A", "NASDAQ", "Financial Services", "Insurance—Diversified");
+values("BRKa", "버크셔 해서웨이 A", "NASDAQ", "Financial Services", "Insurance—Diversified");
 
 insert into stock
-values("BRK-B", "버크셔 해서웨이 B", "NASDAQ", "Financial Services", "Insurance—Diversified");
+values("BRKb", "버크셔 해서웨이 B", "NASDAQ", "Financial Services", "Insurance—Diversified");
 
 
 insert into stock
