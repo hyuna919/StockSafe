@@ -10,6 +10,7 @@ from prophet import Prophet
 import pandas as pd
 import mplfinance as mpf
 
+from PIL import Image
 
 TRADING_PERIODS = 1000
 PROPHET_PERIODS = 365
@@ -94,20 +95,27 @@ def predict(list1):
         # 예측선 그리기
         ap0 = [ mpf.make_addplot(forecast['yhat'],color='g',type='line') ]
 
+
         file_name1 = "prophet/img/" + STOCK_CODE + ".png"
-        save = dict(fname=file_name,dpi=100,pad_inches=1)
+        save = dict(fname=file_name1,dpi=300,pad_inches=1,bbox_inches="tight")
         mpf.plot(data,                # 차트에 채울 데이터(실거래가)
-                addplot=ap0,         # 추가로 그릴 데이터(자체적으로 테마 등 지정 되어있음)
-                volume=True,         # 거래량
-                style='yahoo',       # 차트 테마(색,선, ...)
-                type='candle',       # 그래프 타입 : 캔들스틱
-                savefig=save,        # 이미지로 저장
-                figratio=(18,10),     # 차트의 종횡비
-                ylabel='Price($)',
-                ylabel_lower='Volume'
-                # ylabel='가격(달러)',
-                # ylabel_lower='거래량'
-                )
+            addplot=ap0,         # 추가로 그릴 데이터(자체적으로 테마 등 지정 되어있음)
+            volume=True,         # 거래량
+            style='yahoo',       # 차트 테마(색,선, ...)
+            type='candle',       # 그래프 타입 : 캔들스틱
+            savefig=save,        # 이미지로 저장
+            figratio=(20,10),     # 차트의 종횡비
+            ylabel='Price($)',
+            ylabel_lower='Volume',
+            scale_padding=0
+            # ylabel='가격(달러)',
+            # ylabel_lower='거래량'
+            )
+
+        # 여백 자르기
+        img = Image.open(file_name1)
+        croppedImg = img.crop((200,200,4000,2300))
+        croppedImg.save(file_name1)
 
         gcpUpload(file_name1=file_name1)
 
@@ -194,5 +202,5 @@ def multiThread():
 
 
 if __name__ == '__main__':
-    noThread()
-    #multiThread()
+    # noThread()
+    multiThread()
