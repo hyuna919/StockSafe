@@ -8,6 +8,7 @@ public interface StockService {
 
 	boolean createStock(StockDto stockdto);
 	List<StockDto> readStockAll(String keyword);
+	List<StockDto> readStockAllbyTag(String tag, String keyword);
 	StockDto readStockDetail(String id);
 	boolean updateStock(StockDto stockdto);
 	boolean deleteStock(String id);

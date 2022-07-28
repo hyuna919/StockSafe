@@ -20,7 +20,13 @@
 		where id like concat('%', #{keyword}, '%') or stock_name like concat('%', #{keyword}, '%') 
 		or stock_sector like concat('%', #{keyword}, '%')
 	</select>
- 	
+
+	<select id="readStockAllbyTag" parameterType="String" resultType="StockDto">
+		select id, stock_name, stock_sector, stock_industry, stock_market
+		from stock
+		where ${tag} like concat('%', #{keyword}, '%')
+	</select>
+
 	 <!-- this.id = id;
 		this.stockName = stockName;
 		this.stockMarket = stockMarket;

@@ -33,6 +33,18 @@ public class StockServiceImpl implements StockService{
 	}
 
 	@Override
+	public List<StockDto> readStockAllbyTag(String tag, String keyword) {
+		// TODO Auto-generated method stub
+
+		System.out.println(tag + ", " + keyword);
+		List<StockDto> temp = stockmapper.readStockAllbyTag(tag, keyword);
+
+		for(int a=0; a<temp.size(); a++) System.out.println(temp.toString());
+
+		return temp;
+	}
+
+	@Override
 	public StockDto readStockDetail(String id) {
 		// TODO Auto-generated method stub
 		return stockmapper.readStockDetail(id);
