@@ -2,6 +2,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/git,vue,vuejs,eclipse,java,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=git,vue,vuejs,eclipse,java,visualstudiocode
 
+# 배포파일
+**/application-prod.properties
+
 ### Eclipse ###
 .metadata
 bin/
