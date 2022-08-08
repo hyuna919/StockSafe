@@ -14,4 +14,12 @@ node {
             app = docker.build("hyuna919/jenkins:$BUILD_NUMBER")
     }
     
+    stage ('docker run') {
+        sh 'docker stop dockerwar||true'
+        sh 'docker rm dockerwar||true'
+        sh 'docker run -d \
+            --name dockerwar \
+            -p 8080:9999 \
+            webserver'
+    }
 }
