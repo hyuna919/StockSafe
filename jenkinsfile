@@ -10,7 +10,6 @@ node {
     }
     
     stage ('docker build') {
-            sh 'ls backend'
             app = docker.build("hyuna919/jenkins:$BUILD_NUMBER")
     }
     
