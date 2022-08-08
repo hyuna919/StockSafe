@@ -1,0 +1,20 @@
+node {
+    stage ('clone') {
+        checkout scm 
+    }
+
+    
+    stage ('gradle build') {
+        dir('backend/chatting-service'){
+            sh 'chmod +x gradlew'
+            sh './gradlew build --exclude-task test'
+            sh 'ls build/libs'
+        }
+    }
+    
+    
+    stage ('docker build') {
+        app = docker.build("hyuna919/jenkins:$BUILD_NUMBER")
+    }
+    
+}
