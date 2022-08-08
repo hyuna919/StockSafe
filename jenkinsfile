@@ -4,11 +4,8 @@ node {
     }
     
     stage ('docker build') {
-            dir('backend/chatting-service'){
-                sh 'pwd'
-                sh 'ls'
-                app = docker.build("hyuna919/jenkins:$BUILD_NUMBER")
-            }
+            sh 'ls backend'
+            app = docker.build("hyuna919/jenkins:$BUILD_NUMBER")
     }
     
 }
