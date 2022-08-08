@@ -10,7 +10,7 @@ node {
     }
     
     stage ('docker build') {
-            app = docker.build("hyuna919/jenkins:$BUILD_NUMBER")
+            app = docker.build("hyuna919/stocksafe:$BUILD_NUMBER")
     }
     
     stage ('docker run') {
