@@ -4,6 +4,8 @@ node {
     }
     
     stage ('docker build') {
+        echo 'pwd'
+        echo 'ls'
         app = docker.build("hyuna919/jenkins:$BUILD_NUMBER")
     }
     
