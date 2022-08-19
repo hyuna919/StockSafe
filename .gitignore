@@ -327,3 +327,4 @@ vcs.xml
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode
 
 # End of https://www.toptal.com/developers/gitignore/api/intellij
+src/main/resources/application-auth.properties
