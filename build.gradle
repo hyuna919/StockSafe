@@ -25,6 +25,15 @@ dependencies {
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.boot:spring-boot-starter-mail'
+
+	// OAuth
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.2'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.2'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.2'
+//	implementation 'org.springframework.boot:spring-boot-configuration-processor'
+//	implementation 'javax.xml.bind:jaxb-api:2.3.1'
+//	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	
 	implementation group: 'com.yahoofinance-api', name: 'YahooFinanceAPI', version: '3.15.0'
 	// swagger
@@ -36,6 +45,7 @@ dependencies {
 	// lombok
 	// https://mvnrepository.com/artifact/org.projectlombok/lombok
 	compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+	annotationProcessor 'org.projectlombok:lombok:1.18.20'
 	
 	compileOnly group: 'org.springframework', name: 'spring-context-support', version: '5.2.0.RELEASE'
 	//Thanks for using https://jar-download.com
