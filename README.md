@@ -34,8 +34,8 @@ npm run serve
 | OS | Ubuntu | 20.04 LTS |
 | --- | --- | --- |
 | DB | MySQL | 8.x |
-| Backend | [![Spring Version][Spring-image]][Spring-url]]
-|  | Java | 8 |
+| Backend | [![Spring Version][Spring-image]][Spring-url]|  
+| Java | 8 |
 | Persistance Framework | Mybatis |  |
 | Frontend | Vue | 3.x |
 
