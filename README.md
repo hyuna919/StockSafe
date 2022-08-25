@@ -32,11 +32,12 @@ npm run serve
 ## **개발 환경**
 
 
+| 분류 | 기술 | 버전 |
 | --- | --- | --- |
 | OS | Ubuntu | 20.04 LTS |
 | DB | MySQL | 8.x |
-| Backend | Spring |   |  
-|         | Java   | 8 |
+| Backend | Spring |  |
+|  | Java | 8 |
 | Persistance Framework | Mybatis |  |
 | Frontend | Vue | 3.x |
 
