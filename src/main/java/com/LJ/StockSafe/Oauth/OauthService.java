@@ -32,7 +32,7 @@ public class OauthService {
 
     public LoginResponse login(String providerName, String code) {
         // 프론트에서 넘어온 provider 이름을 통해 InMemoryProviderRepository에서 OauthProvider 가져오기
-        OauthProvider provider = inMemoryProviderRepository.findByProviderName(providerName);
+        OauthProvider provider = getProviderConfig(providerName);
 
         // access token 가져오기
         OauthTokenResponse tokenResponse = getToken(code, provider);
@@ -110,5 +110,10 @@ public class OauthService {
                 .retrieve()
                 .bodyToMono(new ParameterizedTypeReference<Map<String, Object>>() {})
                 .block();
+    }
+
+    public OauthProvider getProviderConfig(String providerName) {
+        // 프론트에서 넘어온 provider 이름을 통해 InMemoryProviderRepository에서 OauthProvider 가져오기
+        return inMemoryProviderRepository.findByProviderName(providerName);
     }
 }
