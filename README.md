@@ -31,15 +31,16 @@ npm run serve
 
 ## **개발 환경**
 
-| OS | Ubuntu | 20.04 LTS |
+
 | --- | --- | --- |
+| OS | Ubuntu | 20.04 LTS |
 | DB | MySQL | 8.x |
 | Backend | [![Spring Version][Spring-image]][Spring-url]|  
 | Java | 8 |
 | Persistance Framework | Mybatis |  |
 | Frontend | Vue | 3.x |
 
-[![Spring Version][Spring-image]][Spring-url]
+[![Npm Version][Spring-image][Spring-url]]
 
 ## **업데이트 내역**
 
