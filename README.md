@@ -34,12 +34,12 @@ npm run serve
 
 | 분류 | 기술 | 버전 |
 | --- | --- | --- |
-| OS | Ubuntu | 20.04 LTS |
-| DB | MySQL | 8.x |
+| OS | ![Ubuntu-image] | 20.04 LTS |
+| DB | ![MySQL-image] | 8.x |
 | Backend | ![Spring-image] |  |
-|  | Java | 8 |
+|  | ![Java-image] | 8 |
 | Persistance Framework | Mybatis |  |
-| Frontend | Vue | 3.x |
+| Frontend | ![Vue-image] | 3.x |
 
 
 ## **업데이트 내역**
@@ -61,3 +61,7 @@ Facebook Prophat 라이센스 ..
 
 [Spring-image]: https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=Spring&logoColor=white
 [Spring-url]: https://spring.io/
+[Java-image]: https://img.shields.io/badge/java-007396?style=flat-square&logo=java&logoColor=white"
+[Vue-image]: https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=Vue.js&logoColor=white
+[MySQL-image]:https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=MySQL&logoColor=white
+[Ubuntu-image]: https://img.shields.io/badge/Ubuntu-E95420?style=flat-square&logo=Ubuntu&logoColor=white
