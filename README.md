@@ -35,15 +35,11 @@ npm run serve
 | --- | --- | --- |
 | OS | Ubuntu | 20.04 LTS |
 | DB | MySQL | 8.x |
-| Backend | [![Spring Version][Spring-image]][Spring-url]|  
-| Java | 8 |
+| Backend | Spring |   |  
+|         | Java   | 8 |
 | Persistance Framework | Mybatis |  |
 | Frontend | Vue | 3.x |
 
-[![NPM Version][npm-image]][npm-url]
-[![Npm Version][Spring-image][Spring-url]]
-
-[Spring-image]
 
 ## **업데이트 내역**
 
