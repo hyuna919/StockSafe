@@ -40,7 +40,10 @@ npm run serve
 | Persistance Framework | Mybatis |  |
 | Frontend | Vue | 3.x |
 
+[![NPM Version][npm-image]][npm-url]
 [![Npm Version][Spring-image][Spring-url]]
+
+[Spring-image]
 
 ## **업데이트 내역**
 
@@ -58,6 +61,5 @@ Facebook Prophat 라이센스 ..
 
 
 <---url--->
-[Spring-image]: [https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=Spring&logoColor=white](https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=Spring&logoColor=white)
-
-[Spring-url]: [https://spring.io/](https://spring.io/)
+[Spring-image]: https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=Spring&logoColor=white
+[Spring-url]: https://spring.io/
