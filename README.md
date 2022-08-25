@@ -36,7 +36,7 @@ npm run serve
 | --- | --- | --- |
 | OS | Ubuntu | 20.04 LTS |
 | DB | MySQL | 8.x |
-| Backend | Spring |  |
+| Backend | ![Spring-image] |  |
 |  | Java | 8 |
 | Persistance Framework | Mybatis |  |
 | Frontend | Vue | 3.x |
@@ -56,7 +56,7 @@ npm run serve
 Facebook Prophat 라이센스 .. 
 
 
-![Spring-image]
+
 
 
 [Spring-image]: https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=Spring&logoColor=white
