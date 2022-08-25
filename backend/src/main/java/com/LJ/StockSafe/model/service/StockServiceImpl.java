@@ -2,6 +2,9 @@ package com.LJ.StockSafe.model.service;
 
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +13,8 @@ import com.LJ.StockSafe.model.mapper.StockMapper;
 
 @Service
 public class StockServiceImpl implements StockService{
+
+	private Logger logger = LogManager.getLogger(this.getClass());
 
 	@Autowired
 	StockMapper stockmapper;
@@ -25,11 +30,13 @@ public class StockServiceImpl implements StockService{
 	public List<StockDto> readStockAll(String keyword) {
 		// TODO Auto-generated method stub
 		
-		List<StockDto> temp = stockmapper.readStockAll(keyword);
+		List<StockDto> stockDtoList = stockmapper.readStockAll(keyword);
 		
-		for(int a=0; a<temp.size(); a++) System.out.println(temp.toString());
+		//결과 출력을 log4j를 이용해 출력.
+		logger.info(stockDtoList);
+		//for(int a=0; a<temp.size(); a++) System.out.println(temp.toString());
 				
-		return temp;
+		return stockDtoList;
 	}
 
 	@Override
