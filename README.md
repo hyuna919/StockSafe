@@ -1,9 +1,5 @@
 # StockSafe
 
-# README
-
-# StockSafe
-
 > 해외 주식 정보와 향후 예측 주가를 확인할 수 있는 웹 사이트.
 > 
 
